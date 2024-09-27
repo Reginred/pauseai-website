@@ -1,16 +1,7 @@
 <script>
 	import { page } from '$app/stores'
+	import ErrorPage from '$lib/components/ErrorPage.svelte'
 	const { status, error } = $page
 </script>
 
-<div class="error">
-	<h1>{status}: {error?.message}</h1>
-</div>
-
-<style>
-	.error {
-		height: 100%;
-		display: grid;
-		place-content: center;
-	}
-</style>
+<ErrorPage {status} {error}></ErrorPage>
